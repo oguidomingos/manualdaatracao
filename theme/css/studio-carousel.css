@@ -1,0 +1,333 @@
+/* Studio Carousel Styles */
+
+/* Pricing Modules Section */
+.pricing-modules {
+    padding: 4rem 1rem;
+    background: #000;
+    text-align: center;
+}
+
+.modules-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.modules-subtitle {
+    font-size: 1.25rem;
+    color: #9ca3af;
+    margin-bottom: 3rem;
+}
+
+/* Veiled Carousel */
+.veiled-carousel {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.veiled-carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 3rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.veiled-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.veiled-carousel-item {
+    flex: 0 0 auto;
+    width: 450px;
+    /* Increased from 320px */
+}
+
+/* Lesson Card */
+.veiled-lesson-card {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    /* Fixed height */
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.veiled-lesson-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
+}
+
+.lesson-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.veiled-lesson-card:hover .lesson-bg {
+    transform: scale(1.1);
+}
+
+/* Chrome Border Effect */
+.lesson-chrome-border {
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Gradient Overlay */
+.lesson-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 40%, transparent 100%);
+    z-index: 1;
+}
+
+/* Shine Effect */
+.lesson-shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+    transform: translateX(-100%);
+    transition: transform 0.8s ease;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.veiled-lesson-card:hover .lesson-shine {
+    transform: translateX(100%);
+}
+
+/* Play Button */
+.lesson-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    z-index: 4;
+    transition: all 0.3s ease;
+}
+
+.veiled-lesson-card:hover .lesson-play {
+    transform: translate(-50%, -50%) scale(1.2);
+    background: rgba(212, 175, 55, 0.25);
+    border-color: #D4AF37;
+}
+
+.lesson-play-icon {
+    color: #fff;
+    margin-left: 4px;
+}
+
+/* Lesson Content */
+.lesson-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 5;
+}
+
+.lesson-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.lesson-pill {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid #D4AF37;
+    border-radius: 9999px;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #D4AF37;
+    letter-spacing: 0.05em;
+}
+
+.bonus-pill {
+    background: linear-gradient(135deg, #b48811, #ebd197);
+    border-color: #fcf6ba;
+    color: #000;
+}
+
+.gold-pill {
+    background: linear-gradient(135deg, #D4AF37, #fcf6ba);
+    border-color: #fcf6ba;
+    color: #000;
+    animation: pulse 2s infinite;
+}
+
+.bonus-value-pill {
+    display: inline-block;
+    padding: 0.25rem 0.625rem;
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid #ef4444;
+    border-radius: 9999px;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #ef4444;
+    text-decoration: line-through;
+}
+
+.lesson-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.375rem;
+    line-height: 1.3;
+}
+
+.lesson-description {
+    font-size: 0.75rem;
+    color: #d1d5db;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Bonus Card Highlight */
+.bonus-card .lesson-chrome-border {
+    background: linear-gradient(135deg, #b48811, #ebd197, #fcf6ba) border-box;
+    opacity: 0.8;
+}
+
+.highlight-bonus {
+    border: 3px solid #D4AF37;
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+}
+
+/* Carousel Navigation */
+.veiled-carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(212, 175, 55, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid #D4AF37;
+    border-radius: 50%;
+    color: #D4AF37;
+    font-size: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.veiled-carousel-nav:hover {
+    background: rgba(212, 175, 55, 0.4);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.veiled-carousel-prev {
+    left: 0;
+}
+
+.veiled-carousel-next {
+    right: 0;
+}
+
+/* Bonus Mega Section */
+.bonus-mega-section {
+    padding: 4rem 1rem;
+    background: linear-gradient(to bottom, #0a0a0a, #000);
+    text-align: center;
+}
+
+.bonus-mega-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.bonus-mega-subtitle {
+    font-size: 1.25rem;
+    color: #9ca3af;
+    margin-bottom: 3rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .veiled-carousel-item {
+        width: 280px;
+    }
+
+    .veiled-lesson-card {
+        height: 360px;
+    }
+
+    .veiled-carousel-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .modules-title,
+    .bonus-mega-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}

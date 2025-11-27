@@ -1,0 +1,118 @@
+{
+  "placeholderImages": [
+    {
+      "id": "vsl-placeholder",
+      "description": "A confident man with an elegant woman in a luxury setting",
+      "imageUrl": "https://images.unsplash.com/photo-1667763920981-0ab4563e12c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjB3b21hbiUyMGNvdXBsZXxlbnwwfHx8fDE3NjMxODE2MzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man woman couple"
+    },
+    {
+      "id": "bonus-1",
+      "description": "Book cover for bonus content about magnetic conversation",
+      "imageUrl": "https://images.unsplash.com/photo-1641154748135-8032a61a3f80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rJTIwY292ZXJ8ZW58MHx8fHwxNzYzMTAzNzkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "book cover"
+    },
+    {
+      "id": "bonus-2",
+      "description": "Book cover for bonus content about alpha mindset",
+      "imageUrl": "https://images.unsplash.com/photo-1585055462747-0bbcbd0e2167?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxib29rJTIwY292ZXIlMjBkYXJrfGVufDB8fHx8MTc2MzE4MTYzM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "book cover dark"
+    },
+    {
+      "id": "bonus-3",
+      "description": "Book cover for bonus content about style and grooming",
+      "imageUrl": "https://images.unsplash.com/photo-1681554437813-efc656499bc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxib29rJTIwY292ZXIlMjBmYXNoaW9ufGVufDB8fHx8MTc2MzE4MTYzM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "book cover fashion"
+    },
+    {
+      "id": "bonus-4",
+      "description": "Book cover for bonus content about dating apps",
+      "imageUrl": "https://images.unsplash.com/photo-1543320996-542b8a0e022c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxib29rJTIwY292ZXIlMjB0ZWNofGVufDB8fHx8MTc2MzE4MTYzM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "book cover tech"
+    },
+    {
+      "id": "bonus-5",
+      "description": "Book cover for bonus content about social circle",
+      "imageUrl": "https://images.unsplash.com/photo-1632481185419-bc03b5082756?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxib29rJTIwY292ZXIlMjBzb2NpYWx8ZW58MHx8fHwxNzYzMTgxNjMzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "book cover social"
+    },
+    {
+      "id": "testimonial-1",
+      "description": "Portrait of a happy man",
+      "imageUrl": "https://images.unsplash.com/photo-1594672830234-ba4cfe1202dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFuJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzYzMDY2MjI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "testimonial-2",
+      "description": "Portrait of another happy man",
+      "imageUrl": "https://images.unsplash.com/photo-1712599982295-1ecff6059a57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdCUyMGhhcHB5fGVufDB8fHx8MTc2MzExOTYyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait happy"
+    },
+    {
+      "id": "testimonial-3",
+      "description": "Portrait of a third happy man",
+      "imageUrl": "https://images.unsplash.com/photo-1712599982295-1ecff6059a57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYW4lMjBwb3J0cmFpdCUyMHNtaWxpbmd8ZW58MHx8fHwxNzYzMTgxNjMzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait smiling"
+    },
+    {
+      "id": "storytelling-image",
+      "description": "Cinematic shot of a man looking thoughtfully",
+      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "imageHint": "man cinematic"
+    },
+    {
+      "id": "storyteller",
+      "description": "Woman in lingerie looking at the camera",
+      "imageUrl": "https://storage.googleapis.com/stabl-agent-assets/a5f6e520-218a-4d2c-80b6-4556488a032d/image.jpeg",
+      "imageHint": "woman lingerie"
+    },
+    {
+      "id": "module-1",
+      "description": "Abstract image of a brain",
+      "imageUrl": "https://images.unsplash.com/photo-1719306171038-363e151a85fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGJyYWlufGVufDB8fHx8MTc2MzEzNTQ0MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract brain"
+    },
+    {
+      "id": "module-2",
+      "description": "Illustration of a diamond",
+      "imageUrl": "https://images.unsplash.com/photo-1742402983116-190c24ecc181?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkaWFtb25kJTIwaWxsdXN0cmF0aW9ufGVufDB8fHx8MTc2MzE4NTc1Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "diamond illustration"
+    },
+    {
+      "id": "module-3",
+      "description": "Icon of a shield",
+      "imageUrl": "https://images.unsplash.com/photo-1587105005437-6803096b0a90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzaGllbGQlMjBpY29ufGVufDB8fHx8MTc2MzE4NTc1Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "shield icon"
+    },
+    {
+      "id": "module-4",
+      "description": "Icon of a play button",
+      "imageUrl": "https://images.unsplash.com/photo-1694878981885-7647baf0d957?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwbGF5JTIwYnV0dG9ufGVufDB8fHx8MTc2MzE4NTc1Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "play button"
+    },
+    {
+      "id": "proof-1",
+      "description": "Chat message screenshot",
+      "imageUrl": "https://images.unsplash.com/photo-1642724978500-c13b821afe04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjaGF0JTIwbWVzc2FnZXxlbnwwfHx8fDE3NjMxODU3NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chat message"
+    },
+    {
+      "id": "proof-2",
+      "description": "Happy chat message screenshot",
+      "imageUrl": "https://images.unsplash.com/photo-1725798451600-ed47670340d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGF0JTIwbWVzc2FnZSUyMGhhcHB5fGVufDB8fHx8MTc2MzE4NTc1Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chat message happy"
+    },
+    {
+      "id": "proof-3",
+      "description": "Success chat message screenshot",
+      "imageUrl": "https://images.unsplash.com/photo-1760360497581-0606569510a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGF0JTIwbWVzc2FnZSUyMHN1Y2Nlc3N8ZW58MHx8fHwxNzYzMTg1NzUyfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "chat message success"
+    },
+    {
+      "id": "proof-4",
+      "description": "Date chat message screenshot",
+      "imageUrl": "https://images.unsplash.com/photo-1712839397054-f5bb6edd8fde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjaGF0JTIwbWVzc2FnZSUyMGRhdGV8ZW58MHx8fHwxNzYzMTg1NzUyfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "chat message date"
+    }
+  ]
+}

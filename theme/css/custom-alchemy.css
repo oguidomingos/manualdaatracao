@@ -1,0 +1,1005 @@
+/**
+ * Veiled Alchemy - Custom CSS
+ * Design system for VSL landing page
+ */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* =====================================================
+   DESIGN SYSTEM - HSL COLORS
+   ===================================================== */
+:root {
+  --background: 0 0% 4%;
+  --foreground: 0 0% 95%;
+
+  --card: 0 0% 11%;
+  --card-foreground: 0 0% 95%;
+
+  --popover: 0 0% 11%;
+  --popover-foreground: 0 0% 95%;
+
+  --primary: 356 86% 30%;
+  --primary-foreground: 0 0% 95%;
+  --primary-glow: 356 69% 41%;
+
+  --secondary: 0 0% 11%;
+  --secondary-foreground: 0 0% 95%;
+
+  --muted: 0 0% 11%;
+  --muted-foreground: 0 0% 77%;
+
+  --accent: 24 58% 52%;
+  --accent-foreground: 0 0% 95%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 95%;
+
+  --border: 0 0% 11%;
+  --input: 0 0% 11%;
+  --ring: 356 86% 30%;
+
+  --radius: 2.5rem;
+
+  --gradient-primary: linear-gradient(90deg, hsl(356 86% 30%) 0%, hsl(356 69% 41%) 100%);
+  --gradient-diagonal: linear-gradient(135deg, hsl(0 0% 4%) 0%, hsl(0 0% 11%) 100%);
+
+  --shadow-glow: 0 0 40px hsla(356, 86%, 30%, 0.3);
+  --shadow-copper: 0 0 30px hsla(24, 58%, 52%, 0.2);
+  --shadow-diffuse: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =====================================================
+   BASE STYLES
+   ===================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.page-template-page-vsl {
+  font-family: 'Inter', sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+.animate-breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* =====================================================
+   UTILITY CLASSES
+   ===================================================== */
+.hero-glow {
+  background: radial-gradient(circle at center, hsla(356, 86%, 30%, 0.15) 0%, transparent 70%);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px hsla(24, 58%, 52%, 0.5);
+}
+
+.text-wine-metallic {
+  background: linear-gradient(90deg, hsl(356 86% 30%) 0%, hsl(356 69% 41%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+.btn-hero {
+  background: linear-gradient(90deg, hsl(356 86% 30%) 0%, hsl(356 69% 41%) 100%);
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-glow);
+  border: none;
+  color: hsl(var(--foreground));
+  cursor: pointer;
+  font-weight: 700;
+  padding: 1.5rem 3rem;
+  border-radius: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-hero:hover {
+  background: hsl(24 58% 52%);
+  box-shadow: var(--shadow-copper);
+  transform: scale(1.05);
+}
+
+/* =====================================================
+   VSL PAGE CONTAINER
+   ===================================================== */
+.vsl-container {
+  min-height: 100vh;
+  background-color: hsl(var(--background));
+  position: relative;
+}
+
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
+.vsl-hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.vsl-hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.vsl-headline {
+  font-size: 2.25rem;
+  font-weight: 900;
+  margin-bottom: 2.5rem;
+  max-width: 56rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .vsl-headline {
+    font-size: 3.75rem;
+    margin-bottom: 4rem;
+  }
+}
+
+/* =====================================================
+   VSL PLAYER
+   ===================================================== */
+.vsl-player-wrapper {
+  width: 100%;
+  max-width: 80rem;
+  margin-bottom: 3rem;
+  animation: fade-in-up 0.8s ease-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+@media (min-width: 768px) {
+  .vsl-player-wrapper {
+    margin-bottom: 4rem;
+  }
+}
+
+.vsl-player-container {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid hsl(var(--border));
+  box-shadow: var(--shadow-diffuse);
+}
+
+.vsl-thumbnail-button {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  position: relative;
+  display: block;
+}
+
+.vsl-thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.vsl-thumbnail-button:hover .vsl-thumbnail-image {
+  transform: scale(1.05);
+}
+
+.vsl-play-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.vsl-thumbnail-button:hover .vsl-play-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.vsl-play-button {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, hsl(356 86% 30%) 0%, hsl(356 69% 41%) 100%);
+  box-shadow: var(--shadow-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: breathe 3s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .vsl-play-button {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+
+.vsl-play-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: 0.5rem;
+  fill: currentColor;
+}
+
+@media (min-width: 768px) {
+  .vsl-play-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+.vsl-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--muted-foreground));
+}
+
+/* =====================================================
+   CTA BUTTON
+   ===================================================== */
+.vsl-cta-button {
+  animation: fade-in-up 0.8s ease-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+
+@media (min-width: 768px) {
+  .vsl-cta-button {
+    font-size: 1.125rem;
+    padding: 2rem 4rem;
+  }
+}
+
+/* =====================================================
+   PROGRESS BAR
+   ===================================================== */
+.vsl-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: hsl(var(--border));
+}
+
+.vsl-progress-fill {
+  height: 100%;
+  background-color: hsl(var(--primary));
+  width: 0;
+  transition: width 1s ease;
+}
+
+/* =====================================================
+   REINFORCEMENT SECTION
+   ===================================================== */
+.vsl-reinforcement-section {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.vsl-diagonal-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, hsl(0 0% 4%) 0%, hsl(0 0% 11%) 100%);
+  opacity: 0.8;
+}
+
+.vsl-abstract-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+}
+
+.vsl-abstract-blob-1 {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 24rem;
+  height: 24rem;
+  background-color: hsl(var(--primary));
+  border-radius: 9999px;
+  filter: blur(100px);
+}
+
+.vsl-abstract-blob-2 {
+  position: absolute;
+  bottom: 25%;
+  right: 25%;
+  width: 24rem;
+  height: 24rem;
+  background-color: hsl(var(--accent));
+  border-radius: 9999px;
+  filter: blur(100px);
+}
+
+.vsl-reinforcement-content {
+  position: relative;
+  z-index: 10;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.vsl-quote {
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
+  animation: fade-in-up 0.8s ease-out;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .vsl-quote {
+    font-size: 2.25rem;
+  }
+}
+
+/* =====================================================
+   FLOATING CTA
+   ===================================================== */
+.vsl-floating-cta {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  animation: fade-in-up 0.8s ease-out;
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
+}
+
+.vsl-floating-cta .btn-hero {
+  padding: 1.5rem 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .vsl-floating-cta {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+  }
+
+  .vsl-floating-cta .btn-hero {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.vsl-footer {
+  background-color: hsl(var(--background));
+  padding: 2rem 0;
+  border-top: 1px solid hsl(var(--border));
+}
+
+.vsl-footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.vsl-footer-text {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.vsl-footer-link {
+  color: hsl(var(--muted-foreground));
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.vsl-footer-link:hover {
+  color: hsl(var(--foreground));
+}
+
+/* =====================================================
+   EXIT POPUP
+   ===================================================== */
+.vsl-exit-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade-in-up 0.3s ease-out;
+}
+
+.vsl-exit-popup-overlay.hidden {
+  display: none;
+}
+
+.vsl-exit-popup-content {
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-width: 28rem;
+  width: 90%;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.vsl-exit-popup-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.vsl-exit-popup-description {
+  font-size: 1rem;
+  color: hsl(var(--accent));
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.vsl-exit-popup-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vsl-exit-popup-stay {
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.vsl-exit-popup-dismiss {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.vsl-exit-popup-dismiss:hover {
+  color: hsl(var(--foreground));
+}
+
+/* =====================================================
+   PRICING SECTION
+   ===================================================== */
+.vsl-pricing-section {
+  position: relative;
+  background: linear-gradient(135deg, hsl(0 0% 4%) 0%, hsl(0 0% 11%) 50%, hsl(0 0% 4%) 100%);
+  padding: 4rem 1.5rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .vsl-pricing-section {
+    padding: 6rem 2rem;
+  }
+}
+
+.pricing-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Main Title */
+.pricing-main-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  animation: fade-in-up 0.8s ease-out;
+}
+
+@media (min-width: 768px) {
+  .pricing-main-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Alert Box */
+.pricing-alert {
+  background: rgba(156, 31, 46, 0.1);
+  border: 1px solid hsl(356 86% 30% / 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  animation: fade-in-up 0.8s ease-out;
+  animation-delay: 0.1s;
+  animation-fill-mode: both;
+}
+
+.pricing-alert p {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.pricing-alert p:last-child {
+  margin-bottom: 0;
+}
+
+/* Power Statement */
+.pricing-statement {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+  animation: fade-in-up 0.8s ease-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.pricing-statement p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.pricing-statement p:last-child {
+  margin-bottom: 0;
+}
+
+/* Modules Section */
+.pricing-modules {
+  margin-bottom: 3rem;
+  animation: fade-in-up 0.8s ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+.modules-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .modules-title {
+    font-size: 2rem;
+  }
+}
+
+.modules-subtitle {
+  text-align: center;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+}
+
+.modules-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.module-item {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.module-item:hover {
+  border-color: hsl(var(--primary));
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+.module-item.bonus {
+  background: linear-gradient(135deg, hsl(356 86% 30% / 0.1) 0%, hsl(24 58% 52% / 0.1) 100%);
+  border-color: hsl(var(--accent));
+}
+
+.module-item h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.module-item p {
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.module-item p:last-child {
+  margin-bottom: 0;
+}
+
+.module-benefit {
+  color: hsl(var(--accent)) !important;
+  font-weight: 600;
+}
+
+/* Pricing Card */
+.pricing-card {
+  background: hsl(var(--card));
+  border: 2px solid hsl(var(--primary));
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-glow);
+  animation: fade-in-up 0.8s ease-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+
+@media (min-width: 768px) {
+  .pricing-card {
+    padding: 3rem;
+  }
+}
+
+.pricing-card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pricing-card-header h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.pricing-price .currency {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--accent));
+}
+
+.pricing-price .amount {
+  font-size: 4rem;
+  font-weight: 900;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (min-width: 768px) {
+  .pricing-price .amount {
+    font-size: 5rem;
+  }
+}
+
+.pricing-card-body {
+  margin-bottom: 2rem;
+}
+
+.pricing-intro {
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.pricing-benefits {
+  background: hsl(0 0% 0% / 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.pricing-benefits p {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.pricing-benefits p:last-child {
+  margin-bottom: 0;
+}
+
+.pricing-final-statement {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.pricing-final-statement p {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.pricing-final-statement .highlight {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: hsl(var(--accent));
+}
+
+/* Pricing CTA */
+.pricing-cta-container {
+  text-align: center;
+}
+
+.pricing-cta-button {
+  background: linear-gradient(90deg, hsl(356 86% 30%) 0%, hsl(356 69% 41%) 100%);
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-glow);
+  border: none;
+  color: hsl(var(--foreground));
+  cursor: pointer;
+  font-weight: 700;
+  padding: 1.75rem 3rem;
+  border-radius: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  animation: breathe 3s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .pricing-cta-button {
+    font-size: 1.125rem;
+    padding: 2rem 4rem;
+  }
+}
+
+.pricing-cta-button:hover {
+  background: hsl(24 58% 52%);
+  box-shadow: var(--shadow-copper);
+  transform: scale(1.05);
+}
+
+.pricing-cta-button.final {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.pricing-guarantee {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Choices Section */
+.pricing-choices {
+  margin-bottom: 3rem;
+  animation: fade-in-up 0.8s ease-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+.pricing-choices h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .pricing-choices h3 {
+    font-size: 2rem;
+  }
+}
+
+.choices-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .choices-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.choice-item {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.choice-item.negative {
+  border-color: hsl(0 84.2% 60.2% / 0.3);
+}
+
+.choice-item.negative:hover {
+  border-color: hsl(0 84.2% 60.2%);
+  box-shadow: 0 0 30px hsla(0, 84.2%, 60.2%, 0.2);
+}
+
+.choice-item.positive {
+  border-color: hsl(var(--primary) / 0.3);
+}
+
+.choice-item.positive:hover {
+  border-color: hsl(var(--primary));
+  box-shadow: var(--shadow-glow);
+}
+
+.choice-number {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.choice-item p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Final CTA Section */
+.pricing-final-cta {
+  text-align: center;
+  animation: fade-in-up 0.8s ease-out;
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
+}
+
+.final-message {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.final-impact {
+  font-size: 1rem;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.pricing-final-cta .pricing-cta-button {
+  margin-bottom: 2rem;
+}
+
+.final-value {
+  background: rgba(156, 31, 46, 0.1);
+  border: 1px solid hsl(356 86% 30% / 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.value-price {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.value-statement {
+  font-size: 1rem;
+  color: hsl(var(--accent));
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* =====================================================
+   VIDEO LOADING BAR
+   ===================================================== */
+.vsl-loading-bar {
+  width: 100%;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 0.5rem 0.5rem;
+  overflow: hidden;
+  margin-top: -1px;
+}
+
+.vsl-loading-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, hsl(356 86% 30%) 0%, hsl(356 69% 41%) 100%);
+  transition: width 0.5s ease-out;
+  box-shadow: 0 0 10px hsla(356, 86%, 30%, 0.6);
+}
