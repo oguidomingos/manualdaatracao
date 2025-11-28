@@ -52,7 +52,7 @@
     container.innerHTML = `
       <div class="social-proof-card">
         <p class="social-proof-name"><span class="sp-name"></span> de <span class="sp-location"></span></p>
-        <p class="social-proof-text">Acabou de adquirir o Treinamento!</p>
+        <p class="social-proof-text">Acabou de adquirir o Curso!</p>
       </div>
     `;
     document.body.appendChild(container);

@@ -77,10 +77,11 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.7s ease;
+    transform: scale(1.3);
 }
 
 .veiled-lesson-card:hover .lesson-bg {
-    transform: scale(1.1);
+    transform: scale(1.4);
 }
 
 /* Chrome Border Effect */

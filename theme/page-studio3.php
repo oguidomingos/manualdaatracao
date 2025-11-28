@@ -81,6 +81,9 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="preconnect" href="https://i.pravatar.cc">
     <link rel="preconnect" href="https://manualdaatracao.digital">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+        rel="stylesheet">
     <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
@@ -127,6 +130,16 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
             background-color: #050505;
             color: #e5e5e5;
         }
+        .text-neutral-300 {
+            color: rgb(212 212 212);
+        }
+        .text-brand-red {
+            color: #8B0000;
+            animation: none !important;
+        }
+        .no-pulse {
+            animation: none !important;
+        }
 
         .gold-text {
             background: linear-gradient(135deg, #FFD700 0%, #FDB931 25%, #FFD700 50%, #FFFFFF 66%, #FFED4E 75%, #FDB931 100%);
@@ -146,9 +159,15 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
 
         .headline {
             font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
+            font-weight: 900;
             line-height: 1.2;
             letter-spacing: -0.02em;
+            font-family: 'Staatliches', sans-serif;
+        }
+
+        .font-headline {
+            font-family: 'Staatliches', sans-serif !important;
+            font-weight: 900 !important;
         }
 
         .subheadline {
@@ -233,6 +252,211 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
             box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
         }
 
+        /* Force text centering across sections */
+        body, section, .prose-premium, .lesson-content, .bonus-mega-section, .veiled-carousel-track {
+            text-align: center !important;
+        }
+
+        .lesson-content .lesson-meta,
+        .lesson-content h3,
+        .lesson-content p,
+        .bonus-mega-section * {
+            text-align: center !important;
+        }
+
+        /* Bonus cards: allow full text */
+        .bonus-card {
+            min-height: 500px;
+            height: auto !important;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .bonus-card .lesson-description {
+            white-space: normal;
+            overflow: visible;
+            display: block;
+            opacity: 1 !important;
+            visibility: visible !important;
+            color: #d1d5db !important;
+        }
+
+        .bonus-card .lesson-content {
+            padding: 16px;
+            position: absolute !important;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 10;
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.4) 100%);
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        /* Spacing tweak for lessons carousel + label */
+        .pricing-modules .veiled-carousel {
+            margin-bottom: 10px;
+        }
+
+        .pricing-modules .text-yellow-400 {
+            margin-top: 6px !important;
+            margin-bottom: 10px !important;
+        }
+
+        .popular-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 14px;
+            border: 1px solid rgba(255, 215, 0, 0.6);
+            border-radius: 999px;
+            background: #FFD700;
+            color: #000000;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            box-shadow: 0 0 18px rgba(255, 215, 0, 0.25);
+            position: absolute !important;
+            top: 0 !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            z-index: 20;
+            width: max-content;
+            margin: 0;
+        }
+
+        .real-images-text {
+            position: absolute;
+            bottom: -35px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 15;
+            pointer-events: none;
+            color: #facc15; /* text-yellow-400 */
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* CTA modal */
+        .cta-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 1.5rem;
+        }
+
+        .cta-overlay.active {
+            display: flex;
+        }
+
+        .cta-overlay .cta-box {
+            max-width: 620px;
+            width: 100%;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(10, 10, 10, 0.95));
+            border: 1px solid rgba(255, 215, 0, 0.5);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.15);
+            border-radius: 20px;
+            padding: 28px;
+            text-align: center;
+        }
+
+        .cta-overlay h3 {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 800;
+        }
+
+        .cta-overlay p {
+            color: #e5e5e5;
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-overlay .benefits {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.25rem 0;
+            text-align: left;
+        }
+
+        .cta-overlay .benefits li {
+            color: #e5e5e5;
+            margin-bottom: 0.6rem;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .cta-overlay .benefits li::before {
+            content: "✓";
+            color: #FFD700;
+            margin-top: 1px;
+            font-weight: 800;
+        }
+
+        .cta-overlay .actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-overlay .actions a,
+        .cta-overlay .actions button {
+            padding: 14px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-overlay .actions .primary {
+            background: linear-gradient(135deg, #FFD700 0%, #FDB931 50%, #FFD700 100%);
+            color: #000;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .cta-overlay .actions .ghost {
+            background: transparent;
+            color: #e5e5e5;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .cta-overlay .line-through {
+            text-decoration: line-through;
+            text-decoration-color: currentColor;
+            text-decoration-thickness: 2px;
+        }
+
+        .cta-overlay .price-green {
+            color: #22c55e;
+            display: inline-block;
+            animation: priceFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes priceFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        /* Slow pulse for popular plan label */
+        .animate-pulse-scale-slow {
+            animation: pulse-scale 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
         /* Infinite Carousel Animations */
         @keyframes scroll {
             0% {
@@ -286,6 +510,19 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
         img {
             content-visibility: auto;
         }
+
+        @keyframes pulse-scale {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .animate-pulse-scale {
+            animation: pulse-scale 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
     </style>
 </head>
 
@@ -302,26 +539,36 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
         <div class="absolute inset-0 bg-black/90"></div>
 
         <div class="relative z-10 max-w-4xl mx-auto w-full">
-            <h3 class="text-xl md:text-xl tracking-tight text-gray-300 font-bold max-w-3xl mx-10 mb-4 gold-text">
-                Aprenda
-                os segredos
-                dos <br>
-                atores p0rnô</h3>
             <!-- Headline -->
-            <h1 class="text-4xl md:text-5xl mx-2 lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white">
-                E faça qualquer mulher rastejar <br>por você
+            <h1 class="text-4xl md:text-5xl mx-2 lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white uppercase font-headline">
+                <span class="gold-text">Aprenda a transar como um homem verdade e</span> <span class="text-brand-red no-pulse" style="display: inline-block;">nunca mais seja esquecido por uma mulher.</span>
             </h1>
 
             <!-- Subheadline -->
             <p class="text-base md:text-xl text-gray-300 mx-4 font-light max-w-3xl mx-auto mb-10">
-                Você vai fazer ela gozar quando aprender essas técnicas secretas.
-                Depois disso, te garanto que você vai ser o homem que atrai todas as mulheres por onde você passe.
+                Por menos de R$10, você vai assistir 15 aulas com atores pornô mostrando, na prática, técnicas que realmente faz uma mulher <span class="text-brand-red">gozar de verdade</span>, sem fingimento, sem frescura. Vamos admitir aqui, você sabe que pode muito mais... essa é sua chance de virar uma verdadeira <span class="text-brand-red">máquina do sexo</span>.
             </p>
 
+            <div class="mb-4">
+                <div class="btn-premium inline-block py-2 px-6 rounded-full text-sm">
+                    Acesso imediato
+                </div>
+            </div>
+
+            <!-- Hero Video (moved up from results section) -->
+            <div
+                class="w-full max-w-md mx-auto aspect-[9/16] bg-black rounded-2xl border border-yellow-800 shadow-2xl mb-10 overflow-hidden">
+                <video id="vsl-video" class="w-full h-full object-cover cursor-pointer" preload="metadata" poster=""
+                    onclick="this.paused ? this.play() : this.pause()" playsinline>
+                    <source src="https://manualdaatracao.digital/wp-content/uploads/2025/11/11261.mov" type="video/mp4">
+                    Seu navegador não suporta a reprodução de vídeos.
+                </video>
+            </div>
+
             <!-- CTA -->
-            <div class="flex flex-col items-center gap-6">
-                <a href="#vsl-section"
-                    class="btn-premium inline-block py-5 px-10 rounded-full text-xl md:text-2xl tracking-wide w-full md:w-auto min-w-[320px] animate-pulse">
+            <div class="flex flex-col items-center gap-6 w-full px-4">
+                <a href="#checkout"
+                    class="btn-premium inline-block py-5 px-6 md:px-10 rounded-full text-xl md:text-2xl tracking-wide w-full md:w-auto md:min-w-[320px] animate-pulse text-center">
                     QUERO OS SEGREDOS
                 </a>
 
@@ -419,7 +666,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
 
             <div class="prose-premium text-left mx-4">
                 <p>Durante muito tempo eu vi mulheres comentando entre si sobre os <span
-                        class="gold-text font-bold">homens que marcaram elas na cama</span> — os
+                        class="gold-text font-bold">homens que marcaram elas na cama</span>: os
                     poucos <span class="gold-text font-bold">que fizeram elas perder o controle, querer repetir,
                         procurar de novo.</span></p>
 
@@ -449,13 +696,20 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
 
                 <p><span class="gold-text font-bold">É porque você nunca aprendeu a sequência certa.<br>
                         Nunca aprendeu como o corpo e a mente dela realmente funcionam.<br>
-                        Nunca aprendeu o que faz ela querer você — de verdade.</span></p>
+                        Nunca aprendeu o que faz ela querer você, de verdade.</span></p>
 
                 <p>As mulheres sabem quando o homem não entende sequência, ritmo, progressão, intensidade.<br>
                     Sabem quando você está perdido, acelerado demais, lento demais ou simplesmente sem noção do que está
                     fazendo.</p>
 
                 <p class="text-xl font-bold text-white mt-8">Mas isso muda hoje.</p>
+
+                <div class="mt-10 text-center w-full px-4">
+                    <a href="#checkout-final"
+                        class="btn-premium inline-block py-5 px-6 md:px-10 rounded-full text-xl tracking-wide w-full md:w-auto md:min-w-[320px] text-center">
+                        QUERO AS TÉCNICAS SECRETAS
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -463,7 +717,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
     <!-- 4. THE METHOD -->
     <section class="py-16 px-4 bg-black">
         <div class="max-w-3xl prose-premium mx-4">
-            <p><span class="gold-text font-bold">Existe um método — real, direto, masculino — que ativa exatamente o que
+            <p><span class="gold-text font-bold">Existe um método, real, direto, masculino, que ativa exatamente o que
                     o corpo feminino espera.</span><br>
                 <span class="text-white font-bold">Segredos que os atores usam para despertar interesse, conexão e
                     vontade.</span><br>
@@ -471,7 +725,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
             </p>
 
             <p>Essas técnicas reorganizam tudo o que você faz de forma instintiva, mas do jeito certo:<br>
-                na ordem certa, com o ritmo certo, com o estímulo certo —<br>
+                na ordem certa, com o ritmo certo, com o estímulo certo,<br>
                 e <span class="gold-text font-bold">faz ela responder de um jeito que você nunca viu antes.</span></p>
 
             <div class="my-10 p-8 card-premium rounded-xl text-center">
@@ -500,7 +754,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                 <p>Ele te ensina o que nenhum homem foi ensinado:<br>
                     <span class="gold-text font-bold">como conduzir, como gerar resposta, como aumentar
                         desejo</span><br>
-                    e como entregar uma experiência que faz qualquer mulher querer voltar —<br>
+                    e como entregar uma experiência que faz qualquer mulher querer voltar,<br>
                     e não te esquecer.
                 </p>
 
@@ -514,9 +768,9 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                 </p>
             </div>
 
-            <div class="text-center mt-12">
+            <div class="text-center mt-12 w-full px-4">
                 <a href="#checkout"
-                    class="btn-premium inline-block py-5 px-10 rounded-full text-xl tracking-wide w-full md:w-auto min-w-[320px]">
+                    class="btn-premium inline-block py-5 px-6 md:px-10 rounded-full text-xl tracking-wide w-full md:w-auto md:min-w-[320px] text-center">
                     QUERO AS TÉCNICAS SECRETAS
                 </a>
             </div>
@@ -529,17 +783,9 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
             <p class="overheadline text-brand-gold mb-2">+ de 5 mil homens usam essas técnicas</p>
             <h2 class="headline text-white mb-10">Os resultados falam por si…</h2>
 
-            <!-- VSL Video -->
-            <div
-                class="w-full max-w-md mx-auto aspect-[9/16] bg-black rounded-2xl border border-yellow-800 shadow-2xl mb-12 overflow-hidden">
-                <video id="vsl-video" class="w-full h-full object-cover cursor-pointer" preload="metadata" poster=""
-                    onclick="this.paused ? this.play() : this.pause()" playsinline>
-                    <source src="https://manualdaatracao.digital/wp-content/uploads/2025/11/11261.mov" type="video/mp4">
-                    Seu navegador não suporta a reprodução de vídeos.
-                </video>
-            </div>
 
-            <!-- Image Testimonials -->
+
+            <!-- VSL Video -->
             <div class="grid md:grid-cols-3 gap-6 text-left mb-12">
                 <!-- Testimonial 1 -->
                 <div
@@ -580,17 +826,19 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                     rastejando querendo mais.</span>
             </p>
 
-            <a href="#checkout"
-                class="btn-premium inline-block py-5 px-10 rounded-full text-xl tracking-wide w-full md:w-auto min-w-[320px] animate-pulse">
-                QUERO AS TÉCNICAS SECRETAS
-            </a>
+            <div class="w-full px-4 flex justify-center">
+                <a href="#checkout"
+                    class="btn-premium inline-block py-5 px-6 md:px-10 rounded-full text-xl tracking-wide w-full md:w-auto md:min-w-[320px] animate-pulse text-center">
+                    QUERO AS TÉCNICAS SECRETAS
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- What You'll Learn - Carousel -->
     <section class="pricing-modules">
         <h2 class="modules-title">O QUE VOCÊ VAI APRENDER</h2>
-        <p class="modules-subtitle">15 aulas práticas que vão transformar sua presença masculina</p>
+        <p class="modules-subtitle">15 aulas mostrando na prática que vão transformar sua presença masculina</p>
 
         <div class="veiled-carousel">
             <button class="veiled-carousel-nav veiled-carousel-prev" aria-label="Anterior">‹</button>
@@ -825,7 +1073,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                             </div>
                             <h3 class="lesson-title">Foreplay Que Explode Desejo</h3>
                             <p class="lesson-description">Transforme jogo prévio em explosão de antecipação. Nada de
-                                mecânico — só prazer real.</p>
+                                mecânico; só prazer real.</p>
                         </div>
                     </div>
                 </div>
@@ -980,7 +1228,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                                 <span class="lesson-pill mx-auto py-4 bonus-pill">BÔNUS 2</span>
                             </div>
                             <h3 class="lesson-title">O Predador Que Ela Nunca Esquece</h3>
-                            <p class="lesson-description">Seja o homem que ela compara com todos os outros — e nenhum
+                            <p class="lesson-description">Seja o homem que ela compara com todos os outros, e nenhum
                                 chega perto.</p>
                         </div>
                     </div>
@@ -988,6 +1236,9 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
 
             </div>
             <button class="veiled-carousel-nav veiled-carousel-next" aria-label="Próximo">›</button>
+            <p class="real-images-text">
+                Sim, essas são imagens reais do curso.
+            </p>
         </div>
     </section>
 
@@ -996,7 +1247,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
     <!-- Bonus Mega Section - Carousel -->
     <section class="bonus-mega-section">
         <h2 class="bonus-mega-title">BÔNUS EXCLUSIVOS INCLUSOS</h2>
-        <p class="bonus-mega-subtitle">6 bônus poderosos que multiplicam seus resultados</p>
+        <p class="bonus-mega-subtitle">7 bônus poderosos que multiplicam seus resultados</p>
 
         <div class="veiled-carousel">
             <button class="veiled-carousel-nav veiled-carousel-prev" aria-label="Anterior">‹</button>
@@ -1004,18 +1255,12 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
 
                 <!-- Bonus 1: Arquétipo do Macho Alfa -->
                 <div class="veiled-carousel-item">
-                    <div class="veiled-lesson-card block h-[400px] bonus-card">
+                    <div class="veiled-lesson-card block bonus-card">
                         <img class="lesson-bg" loading="lazy" decoding="async"
                             src="/wp-content/uploads/2025/11/arquetipo-macho-alfa.png" alt="Arquétipo do Macho Alfa">
                         <div class="lesson-chrome-border"></div>
                         <div class="lesson-gradient"></div>
                         <div class="lesson-shine"></div>
-                        <div class="lesson-play" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"
-                                class="lesson-play-icon">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </div>
                         <div class="lesson-content">
                             <div class="lesson-meta">
                                 <span class="lesson-pill mx-auto py-4 bonus-pill">BÔNUS #1</span>
@@ -1024,7 +1269,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                             <p class="lesson-description">Ative sua identidade ancestral de liderança e presença. Os 5
                                 arquétipos masculinos e como usá-los.</p>
                             <div class="text-center mt-4">
-                                <p class="text-gray-400 line-through text-xl mb-1">R$ 197</p>
+                                <p class="text-gray-400 line-through text-xl mb-1">R$ 49,90</p>
                                 <p class="text-brand-gold font-black text-3xl uppercase tracking-wider">GRÁTIS</p>
                             </div>
                         </div>
@@ -1033,18 +1278,12 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
 
                 <!-- Bonus 2: Código da Confiança Masculina -->
                 <div class="veiled-carousel-item">
-                    <div class="veiled-lesson-card block h-[400px] bonus-card">
+                    <div class="veiled-lesson-card block bonus-card">
                         <img class="lesson-bg" loading="lazy" decoding="async"
                             src="/wp-content/uploads/2025/11/codigo-confianca.png" alt="Código da Confiança Masculina">
                         <div class="lesson-chrome-border"></div>
                         <div class="lesson-gradient"></div>
                         <div class="lesson-shine"></div>
-                        <div class="lesson-play" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"
-                                class="lesson-play-icon">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </div>
                         <div class="lesson-content">
                             <div class="lesson-meta">
                                 <span class="lesson-pill mx-auto py-4 bonus-pill">BÔNUS #2</span>
@@ -1053,7 +1292,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                             <p class="lesson-description">Construa uma base inabalável de autoconfiança. Técnicas para
                                 eliminar insegurança e dúvida.</p>
                             <div class="text-center mt-4">
-                                <p class="text-gray-400 line-through text-xl mb-1">R$ 147</p>
+                                <p class="text-gray-400 line-through text-xl mb-1">R$ 49,90</p>
                                 <p class="text-brand-gold font-black text-3xl uppercase tracking-wider">GRÁTIS</p>
                             </div>
                         </div>
@@ -1062,19 +1301,13 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
 
                 <!-- Bonus 3: Comunicação de Alto Impacto -->
                 <div class="veiled-carousel-item">
-                    <div class="veiled-lesson-card block h-[400px] bonus-card">
+                    <div class="veiled-lesson-card block bonus-card">
                         <img class="lesson-bg" loading="lazy" decoding="async"
                             src="/wp-content/uploads/2025/11/comunicacao-alto-impacto.png"
                             alt="Comunicação de Alto Impacto">
                         <div class="lesson-chrome-border"></div>
                         <div class="lesson-gradient"></div>
                         <div class="lesson-shine"></div>
-                        <div class="lesson-play" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"
-                                class="lesson-play-icon">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </div>
                         <div class="lesson-content">
                             <div class="lesson-meta">
                                 <span class="lesson-pill mx-auto py-4 bonus-pill">BÔNUS #3</span>
@@ -1083,7 +1316,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                             <p class="lesson-description">A arte masculina de falar menos e impactar mais. Linguagem
                                 corporal alfa e olhar de poder.</p>
                             <div class="text-center mt-4">
-                                <p class="text-gray-400 line-through text-xl mb-1">R$ 127</p>
+                                <p class="text-gray-400 line-through text-xl mb-1">R$ 49,90</p>
                                 <p class="text-brand-gold font-black text-3xl uppercase tracking-wider">GRÁTIS</p>
                             </div>
                         </div>
@@ -1092,18 +1325,12 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
 
                 <!-- Bonus 4: Dominância Silenciosa -->
                 <div class="veiled-carousel-item">
-                    <div class="veiled-lesson-card block h-[400px] bonus-card">
+                    <div class="veiled-lesson-card block bonus-card">
                         <img class="lesson-bg" loading="lazy" decoding="async"
                             src="/wp-content/uploads/2025/11/dominancia-silenciosa.png" alt="Dominância Silenciosa">
                         <div class="lesson-chrome-border"></div>
                         <div class="lesson-gradient"></div>
                         <div class="lesson-shine"></div>
-                        <div class="lesson-play" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"
-                                class="lesson-play-icon">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </div>
                         <div class="lesson-content">
                             <div class="lesson-meta">
                                 <span class="lesson-pill mx-auto py-4 bonus-pill">BÔNUS #4</span>
@@ -1112,7 +1339,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                             <p class="lesson-description">Como controlar ambientes e transmitir poder sem dizer uma
                                 palavra. Postura e presença de alto valor.</p>
                             <div class="text-center mt-4">
-                                <p class="text-gray-400 line-through text-xl mb-1">R$ 167</p>
+                                <p class="text-gray-400 line-through text-xl mb-1">R$ 49,90</p>
                                 <p class="text-brand-gold font-black text-3xl uppercase tracking-wider">GRÁTIS</p>
                             </div>
                         </div>
@@ -1121,18 +1348,12 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
 
                 <!-- Bonus 5: Guia Mental de Domínio -->
                 <div class="veiled-carousel-item">
-                    <div class="veiled-lesson-card block h-[400px] bonus-card">
+                    <div class="veiled-lesson-card block bonus-card">
                         <img class="lesson-bg" loading="lazy" decoding="async"
                             src="/wp-content/uploads/2025/11/guia-mental-dominio.png" alt="Guia Mental de Domínio">
                         <div class="lesson-chrome-border"></div>
                         <div class="lesson-gradient"></div>
                         <div class="lesson-shine"></div>
-                        <div class="lesson-play" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"
-                                class="lesson-play-icon">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </div>
                         <div class="lesson-content">
                             <div class="lesson-meta">
                                 <span class="lesson-pill mx-auto py-4 bonus-pill">BÔNUS #5</span>
@@ -1141,7 +1362,29 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                             <p class="lesson-description">Controle da ansiedade, calma ativa e foco absurdo. Protocolo
                                 dos 10 segundos para resetar seu estado.</p>
                             <div class="text-center mt-4">
-                                <p class="text-gray-400 line-through text-xl mb-1">R$ 97</p>
+                                <p class="text-gray-400 line-through text-xl mb-1">R$ 49,90</p>
+                                <p class="text-brand-gold font-black text-3xl uppercase tracking-wider">GRÁTIS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bonus 6: Acesso Exclusivo à Área de Membros -->
+                <div class="veiled-carousel-item">
+                    <div class="veiled-lesson-card block bonus-card">
+                        <img class="lesson-bg" loading="lazy" decoding="async"
+                            src="<?php echo get_template_directory_uri(); ?>/imagemm.jpeg"
+                            alt="Acesso Exclusivo à Área de Membros">
+                        <div class="lesson-chrome-border"></div>
+                        <div class="lesson-gradient"></div>
+                        <div class="lesson-shine"></div>
+                        <div class="lesson-content">
+                            <div class="lesson-meta">
+                                <span class="lesson-pill mx-auto py-4 bonus-pill">BÔNUS #6</span>
+                            </div>
+                            <h3 class="lesson-title">Acesso Exclusivo à Área de Membros</h3>
+                            <p class="lesson-description">Acesso Exclusivo e anônimo à área de membros com todos os conteúdos.</p>
+                            <div class="text-center mt-4">
                                 <p class="text-brand-gold font-black text-3xl uppercase tracking-wider">GRÁTIS</p>
                             </div>
                         </div>
@@ -1150,7 +1393,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
 
                 <!-- Bonus 6: Acesso Vitalício (Highlight) -->
                 <div class="veiled-carousel-item">
-                    <div class="veiled-lesson-card block mx-auto my-2 highlight-bonus" style="height: 400px;">
+                    <div class="veiled-lesson-card block mx-auto my-2 highlight-bonus bonus-card">
                         <img class="lesson-bg" loading="lazy" decoding="async"
                             src="/wp-content/uploads/2025/11/product-mockup.png" alt="Acesso Vitalício">
                         <div class="lesson-chrome-border"></div>
@@ -1168,7 +1411,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                             </div>
                             <h3 class="lesson-title">Acesso Vitalício + Atualizações Futuras</h3>
                             <p class="lesson-description">Você nunca mais paga nada. Todo conteúdo novo entra
-                                automaticamente na sua conta — sem custo.</p>
+                                automaticamente na sua conta, sem custo.</p>
                         </div>
                     </div>
                 </div>
@@ -1182,9 +1425,9 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
 
     <!-- CTA Button After Bonus -->
     <section class="py-12 px-4 bg-black">
-        <div class="max-w-3xl mx-auto text-center">
+        <div class="max-w-3xl mx-auto text-center w-full">
             <a href="#checkout-final"
-                class="btn-premium inline-block py-5 px-10 rounded-full text-xl tracking-wide w-full md:w-auto min-w-[320px] animate-pulse">
+                class="btn-premium inline-block py-5 px-6 md:px-10 rounded-full text-xl tracking-wide w-full md:w-auto md:min-w-[320px] animate-pulse text-center">
                 QUERO AS TÉCNICAS SECRETAS
             </a>
         </div>
@@ -1192,52 +1435,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
 
     <div class="section-divider"></div>
 
-    <!-- DUPLICATED OFFER STACK -->
-    <section class="py-20 px-4 bg-gradient-to-b from-black to-gray-900" id="checkout">
-        <div class="max-w-4xl mx-auto text-center">
 
-            <div
-                class="mb-8 inline-block bg-gradient-to-r from-red-900/40 to-red-800/40 border border-red-500/50 px-6 py-2 rounded-full backdrop-blur-sm">
-                <p class="text-red-300 font-bold text-sm uppercase tracking-wider">
-                    Promoção válida até
-                    <?php echo date('d/m/Y'); ?>
-                </p>
-            </div>
-
-            <div
-                class="bg-gradient-to-br from-gray-900/90 to-black/90 border-2 border-brand-gold rounded-3xl p-8 md:p-12 shadow-[0_0_80px_rgba(255,215,0,0.2)] backdrop-blur-sm">
-                <h2 class="headline text-white mb-8">OFERTA EXCLUSIVA</h2>
-
-                <div class="grid md:grid-cols-2 gap-8 items-center mb-10">
-                    <img src="https://manualdaatracao.digital/wp-content/uploads/2025/11/Texto-do-seu-paragrafo.png"
-                        alt="Bundle" class="w-full rounded-lg" loading="lazy" decoding="async">
-
-                    <div class="text-left space-y-4">
-                        <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span> 15
-                            aulas práticas</div>
-                        <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span>
-                            Técnicas dos Atores</div>
-                        <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span> Guia
-                            de Leitura Corporal</div>
-                        <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span> Bônus
-                            Exclusivos</div>
-                        <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span> Acesso
-                            Vitalício</div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col items-center justify-center gap-2 mb-8">
-                    <span class="text-gray-500 line-through text-lg">De R$622,00</span>
-                    <span class="text-5xl md:text-7xl font-black text-white">Por R$37,50</span>
-                </div>
-
-                <a href="#checkout-final"
-                    class="btn-premium inline-block py-6 px-12 rounded-full text-2xl md:text-3xl tracking-wide w-full shadow-2xl animate-pulse">
-                    QUERO AS TÉCNICAS SECRETAS
-                </a>
-            </div>
-        </div>
-    </section>
 
     <div class="section-divider"></div>
 
@@ -1318,48 +1516,125 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
         </div>
     </section>
 
+    <!-- 8. NEW EXCLUSIVE OFFER CTA -->
+    <section id="checkout" class="py-10 px-4 bg-gradient-to-b from-gray-900 to-black">
+        <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-10">
+                    <h2 class="headline text-white mb-4">
+                        AQUI É A HORA QUE VOCÊ DECIDE SE VAI CONTINUAR SENDO UM QUALQUER... OU VAI SE TORNAR <span class="text-brand-red">O MELHOR SEXO DA VIDA DELA.</span>
+                    </h2>
+                    <p class="text-gray-200 text-base md:text-lg leading-relaxed">
+                        Você tem duas escolhas agora:<br><br>
+                        ✓ Acesso Imediato por apenas R$9,90 - Comece agora com acesso as aulas e aprenda o essencial pra parar de ser só mais um na cama. É o primeiro passo pra se tornar o cara que faz ela lembrar do sexo por dias.<br><br>
+                        ✓ Acesso Completo por apenas R$37,50 - Tenha acesso imediato às 15 aulas completas + materiais extras proibidos que mostram exatamente o que fazer pra transformar qualquer mulher em fã do seu sexo.<br><br>
+                        A diferença entre ser “ok” e ser inesquecível custa menos que um lanche. Você escolhe: continuar sendo esquecido ou se tornar o melhor que ela já teve.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-gray-900/90 to-black/90 border-2 border-brand-gold rounded-3xl p-8 md:p-12 shadow-[0_0_80px_rgba(255,215,0,0.2)] backdrop-blur-sm relative overflow-hidden">
+                <h2 class="headline text-white mb-8 mt-4">Plano Básico</h2>
+
+                <div class="grid md:grid-cols-2 gap-8 items-center mb-10">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cta-990-bundle.jpg" alt="Bundle"
+                        class="w-full rounded-lg shadow-2xl" loading="lazy" decoding="async">
+
+                    <div class="text-left space-y-4">
+                        <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span> 15
+                            aulas mostrando na prática</div>
+                        <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span>
+                            Técnicas dos Atores</div>
+
+                        <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span> Acesso imediato</div>
+                        
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center justify-center gap-2 mb-8">
+                    <span class="text-red-500 line-through text-lg">De R$99,90</span>
+                    <span class="text-5xl md:text-7xl font-black text-green-500 animate-pulse-scale">Por R$9,90</span>
+                </div>
+
+                <a id="cta-990" href="#"
+                    class="btn-premium inline-block py-6 px-6 md:px-12 rounded-full text-2xl md:text-3xl tracking-wide w-full shadow-2xl animate-pulse text-center">
+                    QUERO AS TÉCNICAS SECRETAS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overlay for CTA 9,90 -->
+    <div id="cta-990-overlay" class="cta-overlay" aria-hidden="true">
+        <div class="cta-box">
+            <h3>Estamos disponibilizando uma oferta única para você.</h3>
+            <p>Queremos você na sua versão mais <span class="text-brand-red">tentadora</span>, por isso, estamos te
+                oferecendo essa oferta limitada. De
+                <span class="line-through text-brand-red">R$37,50</span> por apenas <span class="price-green">R$29,90</span>. Você levará o pacote completo
+                com:</p>
+            <ul class="benefits">
+                <li>15 aulas mostrando na prática</li>
+                <li>Técnicas dos Atores</li>
+                <li>Guia de Leitura Corporal</li>
+                <li>Bônus Exclusivos</li>
+                <li>Acesso à área exclusiva de membros anônimos</li>
+                <li>Acesso Imediato</li>
+                <li>Acesso Vitalício</li>
+            </ul>
+            <p><strong>Essa é a sua chance de fazer muitas mulheres calarem a boca.</strong></p>
+            <div class="actions">
+                <a id="cta-990-proceed" class="primary" href="https://pagamento.manualdaatracao.digital/ZfxANk7xJ87JRAd8PHe1">Quero me tornar inesquecível por completo</a>
+                <a id="cta-990-close" class="ghost" href="https://pagamento.manualdaatracao.digital/eWt71mEJbzJnRdtzj57p">Quero apenas as aulas por apenas R$9,90</a>
+            </div>
+        </div>
+    </div>
+
     <!-- 8. OFFER STACK (FINAL) -->
     <section class="py-20 px-4 bg-gradient-to-b from-black to-gray-900" id="checkout-final">
         <div class="max-w-4xl mx-auto text-center">
 
             <div
                 class="mb-8 inline-block bg-gradient-to-r from-red-900/40 to-red-800/40 border border-red-500/50 px-6 py-2 rounded-full backdrop-blur-sm">
-                <p class="text-red-300 font-bold text-sm uppercase tracking-wider">
+                <p class="text-red-300 font-bold text-sm uppercase tracking-wider animate-pulse-scale">
                     Promoção válida até
                     <?php echo date('d/m/Y'); ?>
                 </p>
             </div>
 
             <div
-                class="bg-gradient-to-br from-gray-900/90 to-black/90 border-2 border-brand-gold rounded-3xl p-8 md:p-12 shadow-[0_0_80px_rgba(255,215,0,0.2)] backdrop-blur-sm">
-                <h2 class="headline text-white mb-8">OFERTA EXCLUSIVA</h2>
+                class="relative bg-gradient-to-br from-gray-900/90 to-black/90 border-2 border-brand-gold rounded-3xl p-8 md:p-12 shadow-[0_0_80px_rgba(255,215,0,0.2)] backdrop-blur-sm overflow-visible">
+                <div class="popular-badge animate-pulse-scale-slow">
+                    Plano mais popular
+                </div>
+                <h2 class="headline text-white mb-2">OFERTA EXCLUSIVA</h2>
+                <p class="text-brand-gold font-bold tracking-wider text-2xl md:text-3xl mb-8">BLACK FRIDAY</p>
 
                 <div class="grid md:grid-cols-2 gap-8 items-center mb-10">
-                    <img src="https://manualdaatracao.digital/wp-content/uploads/2025/11/Texto-do-seu-paragrafo.png"
-                        alt="Bundle" class="w-full rounded-lg" loading="lazy" decoding="async">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cta-3750-bundle.jpg" alt="Bundle"
+                        class="w-full rounded-lg" loading="lazy" decoding="async">
 
                     <div class="text-left space-y-4">
                         <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span> 15
-                            aulas práticas</div>
+                            aulas mostrando na prática</div>
                         <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span>
                             Técnicas dos Atores</div>
                         <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span> Guia
                             de Leitura Corporal</div>
                         <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span> Bônus
                             Exclusivos</div>
+                        <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span> Acesso a área exclusiva de membros anônimos</div>
                         <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span> Acesso
-                            Vitalício</div>
+                            Imediato</div>
+                        <div class="flex items-center gap-3 text-gray-300"><span class="text-brand-gold">✓</span> Acesso
+                            a atualizações recorrentes</div>
                     </div>
                 </div>
 
                 <div class="flex flex-col items-center justify-center gap-2 mb-8">
-                    <span class="text-gray-500 line-through text-lg">De R$622,00</span>
-                    <span class="text-5xl md:text-7xl font-black text-white">Por R$37,50</span>
+                    <span class="text-red-500 line-through text-lg">De R$349,40</span>
+                    <span class="text-5xl md:text-7xl font-black text-green-500 animate-pulse-scale">Por R$37,50</span>
                 </div>
 
-                <a href="https://pagamento.manualdaatracao.digital/HhApnpmnGgSDg9PeL0JS"
-                    class="btn-premium inline-block py-6 px-12 rounded-full text-2xl md:text-3xl tracking-wide w-full shadow-2xl animate-pulse">
-                    QUERO AS TÉCNICAS SECRETAS
+                <a id="cta-3750" href="https://pagamento.manualdaatracao.digital/HhApnpmnGgSDg9PeL0JS"
+                    class="btn-premium inline-block py-6 px-6 md:px-12 rounded-full text-2xl md:text-3xl tracking-wide w-full shadow-2xl animate-pulse text-center">
+                    QUERO ME TORNAR INESQUECÍVEL
                 </a>
             </div>
         </div>
@@ -1378,7 +1653,7 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                 </div>
                 <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">30 dias de garantia</h2>
                 <div class="prose-premium text-gray-400 text-sm md:text-base">
-                    <p>Eu já te mostrei o que acontece quando um homem finalmente aprende o método certo — aquele que
+                    <p>Eu já te mostrei o que acontece quando um homem finalmente aprende o método certo: aquele que
                         faz
                         ela reagir diferente, querer de novo e enxergar você como alguém acima da média. Homens comuns
                         já
@@ -1386,8 +1661,8 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                         controle. E agora é a sua vez de sentir essa diferença na prática.</p>
                     <p>E pra você não achar que eu estou exagerando, é simples: entra no treinamento, assiste e aplica.
                         Se
-                        nada mudar — se o clima continuar igual, se ela não reagir diferente, se você não sentir mais
-                        segurança nos próximos 7 dias — eu devolvo 100% do seu dinheiro. Sem perguntas. Sem risco. Esse
+                        nada mudar, se o clima continuar igual, se ela não reagir diferente, se você não sentir mais
+                        segurança nos próximos 7 dias, eu devolvo 100% do seu dinheiro. Sem perguntas. Sem risco. Esse
                         método é a peça que faltava pra transformar seu desempenho e fazer você deixar de ser “mais um”
                         pra
                         ser o homem que ela não consegue esquecer. Entre agora.</p>
@@ -1562,6 +1837,35 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
                 });
             });
 
+            // CTA 9,90 overlay behavior
+            const cta990 = document.getElementById('cta-990');
+            const overlay990 = document.getElementById('cta-990-overlay');
+            const proceed990 = document.getElementById('cta-990-proceed');
+            const close990 = document.getElementById('cta-990-close');
+
+            if (cta990 && overlay990 && proceed990 && close990) {
+                const openOverlay = (e) => {
+                    e.preventDefault();
+                    overlay990.classList.add('active');
+                    overlay990.setAttribute('aria-hidden', 'false');
+                };
+
+                const closeOverlay = () => {
+                    overlay990.classList.remove('active');
+                    overlay990.setAttribute('aria-hidden', 'true');
+                };
+
+                cta990.addEventListener('click', openOverlay);
+                overlay990.addEventListener('click', (e) => {
+                    if (e.target === overlay990) {
+                        closeOverlay();
+                    }
+                });
+                proceed990.addEventListener('click', (e) => {
+                    // allow default navigation to checkout
+                });
+            }
+
             // Video Autoplay on VSL Section Navigation
             const vslVideo = document.getElementById('vsl-video');
             const vslSection = document.getElementById('vsl-section');
@@ -1619,6 +1923,89 @@ require_once get_template_directory() . '/inc/whatsapp-notification.php';
 
                     // Don't prevent default - let user go to checkout
                 });
+            });
+
+            // ============================================
+            // PROTECTION AGAINST CODE INSPECTION
+            // ============================================
+            
+            // Disable right-click
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            // Disable keyboard shortcuts for developer tools
+            document.addEventListener('keydown', function(e) {
+                // F12
+                if (e.keyCode === 123) {
+                    e.preventDefault();
+                    return false;
+                }
+                // Ctrl+Shift+I (Inspect)
+                if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                    e.preventDefault();
+                    return false;
+                }
+                // Ctrl+Shift+J (Console)
+                if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+                    e.preventDefault();
+                    return false;
+                }
+                // Ctrl+Shift+C (Inspect Element)
+                if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+                    e.preventDefault();
+                    return false;
+                }
+                // Ctrl+U (View Source)
+                if (e.ctrlKey && e.keyCode === 85) {
+                    e.preventDefault();
+                    return false;
+                }
+                // Ctrl+S (Save Page)
+                if (e.ctrlKey && e.keyCode === 83) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            // Disable text selection
+            document.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            // Disable copy
+            document.addEventListener('copy', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            // Disable cut
+            document.addEventListener('cut', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            // Detect DevTools
+            const devToolsDetector = () => {
+                const threshold = 160;
+                const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+                const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+                
+                if (widthThreshold || heightThreshold) {
+                    // DevTools detected - could redirect or show warning
+                    document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:#050505;color:#fff;font-family:sans-serif;text-align:center;padding:20px;"><div><h1 style="font-size:2rem;margin-bottom:1rem;">Acesso Negado</h1><p style="color:#999;">Por favor, feche as ferramentas de desenvolvedor para continuar.</p></div></div>';
+                }
+            };
+
+            // Check for DevTools periodically
+            setInterval(devToolsDetector, 1000);
+
+            // Disable drag and drop
+            document.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+                return false;
             });
         });
     </script>
